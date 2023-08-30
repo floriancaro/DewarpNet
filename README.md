@@ -6,6 +6,20 @@
 # DewarpNet 
 This repository contains the codes for [**DewarpNet**](https://www3.cs.stonybrook.edu/~cvl/projects/dewarpnet/storage/paper.pdf) training.
 
+### Quick Setup with Conda
+```
+conda create --name dewarp_net python=3.9
+conda activate dewarp_net
+conda install -c pytorch pytorch torchvision
+conda install -c conda-forge opencv
+pip install -r requirements.txt
+```
+Download [trained models](https://drive.google.com/drive/folders/1yFiYBIkrY61IuRniiV4MLF3jyrNeVd2I?usp=sharing) and put them in the `eval/models` directory.
+```
+# run inference on examples
+python infer.py --wc_model_path ./eval/models/unetnc_doc3d_final.pkl --bm_model_path ./eval/models/dnetccnl_doc3d_final.pkl --img_path eval/inp
+```
+
 ### Recent Updates
 - **[May, 2020]** Added evaluation images and an important note about Matlab SSIM.
 - **[Dec, 2020]** Added OCR evaluation details.
